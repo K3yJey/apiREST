@@ -1,7 +1,7 @@
-# NodeJS + Express - apiREST
+# NodeJS + Express + MongoDB - apiREST
 
 ## 📦 Sobre el repositorio
-apiREST con NodeJs + Express usando el Modelo - Vista - Controlador (MVC)
+apiREST con NodeJs + Express + MongoDB usando el Modelo - Vista - Controlador (MVC)
 
 ## ✔️ [El respositorio aquí](https://github.com/K3yJey/apiREST.git)
 

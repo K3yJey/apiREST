@@ -14,7 +14,7 @@ apiREST con NodeJs + Express + MongoDB usando el Modelo - Vista - Controlador (M
 ## 📌 Comentarios adicionales
 Proyecto en progreso.
 
-## ⚙️ Comandos necesarios para la creación de la app React
+## ⚙️ Comandos necesarios
 ```console
 npm init --y
 ```

@@ -1,4 +1,5 @@
-const { trackModel } = require("../models")
+const { storageModel } = require("../models")
+const PUBLIC_URL = process.env.PUBLIC_URL
 
 /**
  * Obtener lista de base de datos
@@ -6,7 +7,7 @@ const { trackModel } = require("../models")
  * @param {*} res
  */
 const getItems = async (req, res) => {
-  const data = await trackModel.module.find({})
+  const data = await storageModel.module.find({})
   res.send({ data })
 }
 
@@ -24,10 +25,13 @@ const getItem = (req, res) => {}
  */
 const createItem = async (req, res) => {
   //const body = req.body Destructuramos
-  const { body } = req
-  console.log(body)
+  const { body, file } = req
+  const fileData = {
+    url: `${PUBLIC_URL}/${file.filename}`,
+    filename: file.filename
+  }
 
-  const data = await trackModel.module.create(body)
+  const data = await storageModel.module.create(fileData)
   res.send({ data })
 }
 

@@ -1,12 +1,12 @@
-const mongoose = requiere("mongoose")
+const mongoose = require("mongoose")
 
-const UserScheme = new mongoose.Scheme(
+const UserSchema = new mongoose.Schema(
   {
     name: { type: String },
     age: { type: Number },
     email: { type: String, unique: true },
     password: { type: String },
-    role: { type: ["user", "admin"], default: user }
+    role: { type: ["user", "admin"], default: "user" }
   },
   {
     timestamps: true, //Columna de fecha de creación y actualización
@@ -14,4 +14,4 @@ const UserScheme = new mongoose.Scheme(
   }
 )
 
-exports.module = mongoose.model("user", UserScheme)
+exports.module = mongoose.model("user", UserSchema)

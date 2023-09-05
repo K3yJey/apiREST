@@ -1,11 +1,10 @@
 const express = require("express")
 const router = express.Router()
+const { getItems, getItem, createItem } = require("../controllers/track")
 
 //http://localhost/track GET, POST, DELETE, PUT
 
-router.get("/", (req, res) => {
-  const data = ["Hola", "mundo"]
-  res.send({ data })
-})
+router.get("/", getItems)
+router.post("/", createItem)
 
 module.exports = router

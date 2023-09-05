@@ -1,16 +1,16 @@
-const mongoose = requiere("mongoose")
+const mongoose = require("mongoose")
 
-const TrackScheme = new mongoose.Scheme(
+const trackSchema = new mongoose.Schema(
   {
     name: { type: String },
-    album: { type: Number },
+    album: { type: String },
     cover: {
       type: String,
       validate: {
         validator: (req) => {
           return true
         },
-        message: "Error URL"
+        message: "Error_URL"
       }
     },
     artist: {
@@ -27,4 +27,4 @@ const TrackScheme = new mongoose.Scheme(
   }
 )
 
-exports.module = mongoose.model("track", TrackScheme)
+exports.module = mongoose.model("track", trackSchema)

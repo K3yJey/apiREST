@@ -1,6 +1,6 @@
-const mongoose = requiere("mongoose")
+const mongoose = require("mongoose")
 
-const StorageScheme = new mongoose.Scheme(
+const storageSchema = new mongoose.Schema(
   {
     url: { type: String },
     filename: { type: Number }
@@ -11,4 +11,4 @@ const StorageScheme = new mongoose.Scheme(
   }
 )
 
-exports.module = mongoose.model("storage", StorageScheme)
+exports.module = mongoose.model("storage", storageSchema)

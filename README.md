@@ -29,6 +29,11 @@ npm i cors dotenv multer
 ```
 ↑ Instalación de Cors(Controlar permisos de solicitudes), Dotenv(Manejar variables de entorno) y Multer(Manejar carga de archivos)
 
+```console
+npm i nodemon -g
+```
+↑ Instalación de paquete para reiniciar automáticamente la conexión ante los cambios de código
+
 
 <br/>
 

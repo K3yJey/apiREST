@@ -31,14 +31,19 @@ npm i cors dotenv multer
 ↑ Instalación de Cors(Controlar permisos de solicitudes), Dotenv(Manejar variables de entorno) y Multer(Manejar carga de archivos)
 
 ```console
-npm i nodemon -g
+npm i express-validator --S
 ```
-↑ Instalación de paquete para reiniciar automáticamente la conexión ante los cambios de código
+↑ Instalación del validador de express, filtra la data antes de llegar al controller
 
 ```console
 node app.js
 ```
 ↑ Inicia app.js mediante node
+
+```console
+npm i nodemon -g
+```
+↑ Instalación de paquete para reiniciar automáticamente la conexión ante los cambios de código
 
 ```console
 "start": "node ./app.js",

@@ -25,8 +25,6 @@ const getItem = (req, res) => {}
 const createItem = async (req, res) => {
   //const body = req.body Destructuramos
   const { body } = req
-  console.log(body)
-
   const data = await trackModel.module.create(body)
   res.send({ data })
 }

@@ -1,46 +1,80 @@
+const { matchedData } = require("express-validator")
 const { trackModel } = require("../models")
+const { handleHttpError } = require("../utils/handleError")
 
 /**
- * Obtener lista de base de datos
- * @param {*} req
- * @param {*} res
+ * Crear un registro
  */
-const getItems = async (req, res) => {
-  const data = await trackModel.module.find({})
-  res.send({ data })
+const createItem = async (req, res) => {
+  try {
+    const body = matchedData(req)
+    const data = await trackModel.module.create(body)
+
+    res.send({ data })
+  } catch (error) {
+    handleHttpError(res, "Error en createItem")
+    console.log("Error en createItem", error)
+  }
 }
 
 /**
- * Obtener un detalle
- * @param {*} req
- * @param {*} res
+ * Listar registros
  */
-const getItem = (req, res) => {}
+const getItems = async (req, res) => {
+  try {
+    const data = await trackModel.module.find({})
+    res.send({ data })
+  } catch (error) {
+    handleHttpError(res, "Error en getItems")
+    console.log("Error en getItems", error)
+  }
+}
 
 /**
- * Insertar un registro
- * @param {*} req
- * @param {*} res
+ * Listar un registro
  */
-const createItem = async (req, res) => {
-  //const body = req.body Destructuramos
-  const { body } = req
-  const data = await trackModel.module.create(body)
-  res.send({ data })
+const getItem = async (req, res) => {
+  try {
+    req = matchedData(req)
+    const { id } = req
+    const data = await trackModel.module.findById(id)
+    res.send({ data })
+  } catch (error) {
+    handleHttpError(res, "Error en getItem")
+    console.log("Error en getItem", error)
+  }
 }
 
 /**
  * Actualizar un registro
- * @param {*} req
- * @param {*} res
  */
-const updateItem = (req, res) => {}
+const updateItem = async (req, res) => {
+  try {
+    const { id, ...body } = matchedData(req)
+    const filter = { _id: id } // Filtra el id coincidente
+    const data = await trackModel.module.findOneAndUpdate(filter, body) // Utiliza el filtro para buscar
+
+    res.send({ data })
+  } catch (error) {
+    handleHttpError(res, "Error en updateItem")
+    console.log("Error en updateItem", error)
+  }
+}
 
 /**
  * Eliminar un registro
- * @param {*} req
- * @param {*} res
  */
-const deleteItem = (req, res) => {}
+const deleteItem = async (req, res) => {
+  try {
+    req = matchedData(req)
+    const { id } = req
+    const filter = { _id: id } // Filtra el id coincidente
+    const data = await trackModel.module.delete(filter)
+    res.send({ data })
+  } catch (error) {
+    handleHttpError(res, "Error en deleteItem")
+    console.log("Error en deleteItem", error)
+  }
+}
 
-module.exports = { getItems, getItem, createItem, updateItem, deleteItem }
+module.exports = { createItem, getItems, getItem, updateItem, deleteItem }

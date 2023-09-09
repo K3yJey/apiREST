@@ -1,7 +1,6 @@
 const express = require("express")
 const fs = require("fs") //Interacturar con directorios
 const router = express.Router()
-
 const PATH_ROUTES = __dirname //dirname obtiene la ruta actual
 
 const removeExtension = (fileName) => {

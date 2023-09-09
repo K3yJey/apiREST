@@ -66,13 +66,9 @@ const updateItem = async (req, res) => {
  */
 const deleteItem = async (req, res) => {
   try {
-    req = matchedData(req)
-    const { id } = req
+    const { id } = matchedData(req)
     const filter = { _id: id } // Filtra el id coincidente
-    const data = await trackModel.module.delete({ _id: id })
-
-    console.log("id: ", id)
-    console.log("data: ", data)
+    const data = await trackModel.module.delete(filter)
     res.send({ data })
   } catch (error) {
     handleHttpError(res, "Error en deleteItem")

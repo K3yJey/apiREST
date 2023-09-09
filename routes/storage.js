@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router()
+const { validatorGetItem } = require("../validators/storage")
 const uploadMiddleware = require("../utils/handleStorage")
 const {
   createItem,
   getItems,
   getItem,
-  updateItem,
   deleteItem
 } = require("../controllers/storage")
 
@@ -25,16 +25,11 @@ router.get("/", getItems)
 /**
  * Listar un registro || POST
  */
-router.get("/:id", getItem)
-
-/**
- * Actualizar un registro || PUT
- */
-router.put("/:id", updateItem)
+router.get("/:id", validatorGetItem, getItem)
 
 /**
  * Eliminar un registro || DELETE
  */
-router.delete("/:id", deleteItem)
+router.delete("/:id", validatorGetItem, deleteItem)
 
 module.exports = router

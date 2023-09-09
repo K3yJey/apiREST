@@ -40,6 +40,7 @@ npm i mongoose-delete --save
 ```
 ↑ Instalación de plugin para eliminar mediante el soft-delete
 
+## ⚙️ Comandos para ejecutar el apiRest
 ```console
 node app.js
 ```

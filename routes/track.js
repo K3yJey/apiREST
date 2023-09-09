@@ -32,6 +32,6 @@ router.put("/:id", validatorGetItem, validatorCreateItem, updateItem)
 /**
  * Eliminar un registro || DELETE
  */
-router.delete("/:id", deleteItem)
+router.delete("/:id", validatorGetItem, deleteItem)
 
 module.exports = router

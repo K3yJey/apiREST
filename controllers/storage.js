@@ -2,50 +2,48 @@ const { storageModel } = require("../models")
 const PUBLIC_URL = process.env.PUBLIC_URL
 
 /**
- * Obtener lista de base de datos
- * @param {*} req
- * @param {*} res
+ * Crear un registro
  */
-const getItems = async (req, res) => {
-  const data = await storageModel.module.find({})
-  res.send({ data })
+const createItem = async (req, res) => {
+  try {
+    const { body, file } = req
+    const fileData = {
+      filename: file.filename,
+      url: `${PUBLIC_URL}/${file.filename}`
+    }
+    const data = await storageModel.module.create(fileData)
+    res.send({ data })
+  } catch (error) {
+    handleHttpError(res, "Error en createStorage")
+    console.log("Error en createStorage: ", error)
+  }
 }
 
 /**
- * Obtener un detalle
- * @param {*} req
- * @param {*} res
+ * Listar registros
+ */
+const getItems = async (req, res) => {
+  try {
+    const data = await storageModel.module.find({})
+    res.send({ data })
+  } catch (error) {
+    handleHttpError(res, "Error en createStorage")
+    console.log("Error en createStorage", error)
+  }
+}
+
+/**
+ * Listar un registro
  */
 const getItem = (req, res) => {}
 
 /**
- * Insertar un registro
- * @param {*} req
- * @param {*} res
- */
-const createItem = async (req, res) => {
-  //const body = req.body Destructuramos
-  const { body, file } = req
-  const fileData = {
-    url: `${PUBLIC_URL}/${file.filename}`,
-    filename: file.filename
-  }
-
-  const data = await storageModel.module.create(fileData)
-  res.send({ data })
-}
-
-/**
  * Actualizar un registro
- * @param {*} req
- * @param {*} res
  */
 const updateItem = (req, res) => {}
 
 /**
  * Eliminar un registro
- * @param {*} req
- * @param {*} res
  */
 const deleteItem = (req, res) => {}
 

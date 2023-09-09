@@ -36,6 +36,11 @@ npm i express-validator --S
 ↑ Instalación del validador de express, filtra la data antes de llegar al controller
 
 ```console
+npm i mongoose-delete --save
+```
+↑ Instalación de plugin para eliminar mediante el soft-delete
+
+```console
 node app.js
 ```
 ↑ Inicia app.js mediante node

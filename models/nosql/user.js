@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema(
     name: { type: String },
     age: { type: Number },
     email: { type: String, unique: true },
-    password: { type: String },
+    password: { type: String, select: false }, //select: false - Para que no se muestre cuando se consulta
     role: { type: ["user", "admin"], default: "user" }
   },
   {

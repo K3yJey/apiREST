@@ -40,6 +40,16 @@ npm i mongoose-delete --save
 ```
 ↑ Instalación de plugin para eliminar mediante el soft-delete
 
+```console
+npm i jsonwebtoken --save
+```
+↑ Instalación del json web token (JWT) para el control de sesión
+
+```console
+npm i bcryptjs bcrypt --save
+```
+↑ IInstalación del bcrypt y bcryptjs para encriptar datos
+
 <br/>
 
 ## ⚙️ Comandos para ejecutar el apiRest

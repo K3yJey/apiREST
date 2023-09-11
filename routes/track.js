@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const { validatorCreateItem, validatorGetItem } = require("../validators/track")
+const authMiddleware = require("../middleware/session")
 const {
   createItem,
   getItems,
@@ -17,7 +18,7 @@ router.post("/", validatorCreateItem, createItem)
 /**
  * Listar registros || POST
  */
-router.get("/", getItems)
+router.get("/", authMiddleware, getItems)
 
 /**
  * Listar un registro || POST

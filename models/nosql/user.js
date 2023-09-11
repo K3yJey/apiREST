@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const moongoseDelete = require("mongoose-delete")
 
-const UserSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     name: { type: String },
     age: { type: Number },
@@ -15,5 +15,5 @@ const UserSchema = new mongoose.Schema(
   }
 )
 
-UserSchema.plugin(moongoseDelete, { overrideMethods: "all" }) //Sobreescribir métodos nativos de mongoose
-exports.module = mongoose.model("user", UserSchema)
+userSchema.plugin(moongoseDelete, { overrideMethods: "all" }) //Sobreescribir métodos nativos de mongoose
+exports.module = mongoose.model("user", userSchema)

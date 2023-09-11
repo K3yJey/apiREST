@@ -23,7 +23,8 @@ const createItem = async (req, res) => {
 const getItems = async (req, res) => {
   try {
     const data = await trackModel.module.find({})
-    res.send({ data })
+    const user = req.user
+    res.send({ data, user })
   } catch (error) {
     handleHttpError(res, "Error en getItems")
     console.log("Error en getItems", error)

@@ -38,23 +38,23 @@ const loginAuth = async (req, res) => {
 
   if (!user) {
     handleHttpError(res, "No existe el usuario", 404)
-    console.log("No existe el usuario: ", error)
+  } else {
+    const hashPassword = user.get("password")
+    const check = await compare(req.password, hashPassword)
+
+    if (!check) {
+      handleHttpError(res, "Contraseña inválida", 401)
+    } else {
+      user.set("password", undefined, { strict: false }) //No se muestre el password en data
+      const data = {
+        token: await tokenSign(user),
+        user
+      }
+
+      res.send({ data })
+    }
   }
 
-  const hashPassword = user.get("password")
-  const check = await compare(req.password, hashPassword)
-
-  if (!check) {
-    handleHttpError(res, "Contraseña inválida", 401)
-    console.log("Contraseña inválida: ", error)
-  }
-
-  const data = {
-    token: tokenSign(user),
-    user
-  }
-
-  res.send({ data })
   try {
   } catch (error) {
     handleHttpError(res, "Error en loginAuth")

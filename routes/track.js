@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const { validatorCreateItem, validatorGetItem } = require("../validators/track")
 const authMiddleware = require("../middleware/session")
+const checkRol = require("../middleware/rol")
 const {
   createItem,
   getItems,
@@ -18,7 +19,7 @@ router.post("/", validatorCreateItem, createItem)
 /**
  * Listar registros || POST
  */
-router.get("/", authMiddleware, getItems)
+router.get("/", authMiddleware, checkRol(["admin"]), getItems) //Solo el user:admin puede listar tracks
 
 /**
  * Listar un registro || POST

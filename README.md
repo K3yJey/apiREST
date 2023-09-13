@@ -1,7 +1,7 @@
-# NodeJS + Express + MongoDB - apiREST
+# ApiREST con NodeJS + Express + MongoDB + MVC
 
 ## 📦 Sobre el repositorio
-apiREST con NodeJs + Express + MongoDB usando el Modelo - Vista - Controlador (MVC)
+Este proyecto es una implementación de una API REST desde cero utilizando las tecnologías Node.js, Express y MongoDB. Se sigue el patrón de diseño Modelo - Vista - Controlador (MVC) para lograr una organización clara y modular del código.
 
 ## ✔️ [El respositorio aquí](https://github.com/K3yJey/apiREST.git)
 
@@ -12,7 +12,7 @@ apiREST con NodeJs + Express + MongoDB usando el Modelo - Vista - Controlador (M
 * ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
 ## 📌 Comentarios adicionales
-Proyecto en progreso.
+Proyecto culminado.
 
 ## ⚙️ Comandos necesarios
 ```console

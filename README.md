@@ -3,7 +3,7 @@
 ## 📦 Sobre el repositorio
 Proyecto BackEnd, creación e implementación de una API REST utilizando Node.js, Express y MongoDB. Sguiendo el patrón de diseño Modelo - Vista - Controlador (MVC) para lograr una organización clara y modular del código, además de validación mediante Json Web Token (JWT) y encriptación con bcrypt.
 
-## ✔️ [El respositorio aquí](https://github.com/K3yJey/apiREST.git)
+## ✔️ [El respositorio aquí](https://github.com/K3yJey/apiREST_NodeJS.git)
 
 ## 🔧 Tecnologías utilizadas
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)

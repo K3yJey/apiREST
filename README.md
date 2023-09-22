@@ -1,7 +1,7 @@
 # ApiREST con NodeJS + Express + MongoDB + MVC
 
 ## 📦 Sobre el repositorio
-Proyecto backend, implementación de una API REST desde cero utilizando las tecnologías Node.js, Express y MongoDB. Se sigue el patrón de diseño Modelo - Vista - Controlador (MVC) para lograr una organización clara y modular del código.
+Proyecto BackEnd, creación e implementación de una API REST utilizando Node.js, Express y MongoDB. Sguiendo el patrón de diseño Modelo - Vista - Controlador (MVC) para lograr una organización clara y modular del código, además de validación mediante Json Web Token (JWT) y encriptación con bcrypt.
 
 ## ✔️ [El respositorio aquí](https://github.com/K3yJey/apiREST.git)
 

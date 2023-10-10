@@ -71,7 +71,7 @@ npm i nodemon -g
 ↑ Agregar dentro del apartado de “scripts” en package.json
 
 ```console
-npm run dev
+npm run start:dev
 ```
 ↑ Iniciar el proyecto con nodemon
 

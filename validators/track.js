@@ -1,6 +1,6 @@
 const { check } = require("express-validator")
-const validateResult = require("../utils/handleValidator")
 
+const validateResult = require("../utils/handleValidator")
 const validatorCreateItem = [
   check("name").exists().notEmpty(),
   check("album").exists().notEmpty(),

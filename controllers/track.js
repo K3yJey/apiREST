@@ -2,9 +2,7 @@ const { matchedData } = require("express-validator")
 const { trackModel } = require("../models")
 const { handleHttpError } = require("../utils/handleError")
 
-/**
- * Crear un registro
- */
+// Crear un registro
 const createItem = async (req, res) => {
   try {
     const body = matchedData(req)
@@ -17,9 +15,7 @@ const createItem = async (req, res) => {
   }
 }
 
-/**
- * Listar registros
- */
+// Listar registros
 const getItems = async (req, res) => {
   try {
     const data = await trackModel.module.find({})
@@ -31,9 +27,8 @@ const getItems = async (req, res) => {
   }
 }
 
-/**
- * Listar un registro
- */
+// Listar un registro
+
 const getItem = async (req, res) => {
   try {
     req = matchedData(req)
@@ -46,9 +41,7 @@ const getItem = async (req, res) => {
   }
 }
 
-/**
- * Actualizar un registro
- */
+// Actualizar un registro
 const updateItem = async (req, res) => {
   try {
     const { id, ...body } = matchedData(req)
@@ -62,9 +55,7 @@ const updateItem = async (req, res) => {
   }
 }
 
-/**
- * Eliminar un registro
- */
+// Eliminar un registro
 const deleteItem = async (req, res) => {
   try {
     const { id } = matchedData(req)

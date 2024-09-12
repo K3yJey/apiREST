@@ -11,29 +11,19 @@ const {
   deleteItem
 } = require("../controllers/track")
 
-/**
- * Crear un registro || GET
- */
+// Crear un registro || GET
 router.post("/", validatorCreateItem, createItem)
 
-/**
- * Listar registros || POST
- */
+// Listar registros || POST
 router.get("/", authMiddleware, checkRol(["admin"]), getItems) //Solo el user:admin puede listar tracks
 
-/**
- * Listar un registro || POST
- */
+// Listar un registro || POST
 router.get("/:id", validatorGetItem, getItem)
 
-/**
- * Actualizar un registro || PUT
- */
+// Actualizar un registro || PUT
 router.put("/:id", validatorGetItem, validatorCreateItem, updateItem)
 
-/**
- * Eliminar un registro || DELETE
- */
+// Eliminar un registro || DELETE
 router.delete("/:id", validatorGetItem, deleteItem)
 
 module.exports = router

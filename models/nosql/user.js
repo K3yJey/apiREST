@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
     age: { type: Number },
     email: { type: String, unique: true },
     password: { type: String, select: false }, //select: false - Para que no se muestre cuando se consulta
-    role: { type: ["user", "admin"], default: "user" }
+    role: { type: ["user", "admin"], default: "admin" }
   },
   {
     timestamps: true, //Columna de fecha de creación y actualización

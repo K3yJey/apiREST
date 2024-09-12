@@ -1,83 +1,80 @@
-# ApiREST con NodeJS + Express + MongoDB + MVC
+# ApiREST with NodeJS + Express + MongoDB & MVC
 
-## 📦 Sobre el repositorio
-Proyecto BackEnd, creación e implementación de una API REST utilizando Node.js, Express y MongoDB. Sguiendo el patrón de diseño Modelo - Vista - Controlador (MVC) para lograr una organización clara y modular del código, además de validación mediante Json Web Token (JWT) y encriptación con bcrypt.
+### Description
 
-## ✔️ [El respositorio aquí](https://github.com/K3yJey/apiREST_NodeJS.git)
+ApiREST with NodeJS, Express, MongoDB and Postman. Model View Controller (MVC) design pattern and validation with JSON Web Token (JWT).
 
-## 🔧 Tecnologías utilizadas
-* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-* ![Node.JS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-* ![Express.JS](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-* ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-* ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+### Technologies
 
-## 📌 Comentarios adicionales
-Proyecto culminado.
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![Node.JS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- ![Express.JS](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+- ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+- ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 
-## ⚙️ Comandos necesarios
-```console
-npm init --y
-```
-↑ Crear el package.json
+### Aditionals Commets
 
-```console
-npm i express --save
-```
-↑ Instalación de Express
+Project completed.
+
+### Getting started
+
+↓ Installation of CORS (Cross-Origin Resource Sharing), Dotenv: Library to load variables and Multer: Middleware to handle file uploads.
 
 ```console
 npm i cors dotenv multer
 ```
-↑ Instalación de Cors(Controlar permisos de solicitudes), Dotenv(Manejar variables de entorno) y Multer(Manejar carga de archivos)
+
+↓ Installation of the express validator, which filters the data before it reaches the controller.
 
 ```console
 npm i express-validator --S
 ```
-↑ Instalación del validador de express, filtra la data antes de llegar al controller
+
+↓ Installation of plugin to delete by soft-delete.
 
 ```console
 npm i mongoose-delete --save
 ```
-↑ Instalación de plugin para eliminar mediante el soft-delete
+
+↓ Installation of the json web token (JWT) for session control.
 
 ```console
 npm i jsonwebtoken --save
 ```
-↑ Instalación del json web token (JWT) para el control de sesión
+
+↓ Installation of bcrypt and bcryptjs to encrypt data.
 
 ```console
 npm i bcryptjs bcrypt --save
 ```
-↑ IInstalación del bcrypt y bcryptjs para encriptar datos
 
-<br/>
+↓ Start app.js using node.
 
-## ⚙️ Comandos para ejecutar el apiRest
 ```console
 node app.js
 ```
-↑ Inicia app.js mediante node
+
+↓ Installation of a package to automatically restart the connection in case of code changes.
 
 ```console
 npm i nodemon -g
 ```
-↑ Instalación de paquete para reiniciar automáticamente la conexión ante los cambios de código
+
+↓ Add inside the “scripts” section in package.json.
 
 ```console
 "start": "node ./app.js",
 "dev": "nodemon ./app.js",
 ```
-↑ Agregar dentro del apartado de “scripts” en package.json
+
+↓ Start the project with nodemon.
 
 ```console
 npm run start:dev
 ```
-↑ Iniciar el proyecto con nodemon
 
-<br/>
+**IMPORTANT: Keep the terminal running for the correct execution of the app.**
 
-**IMPORTANTE: Mantener la terminal corriendo para la correcta ejecución de la api.**
+### Developer contact
 
-## 💻 Contacto
-* Linkedin => [Clic aquí](https://www.linkedin.com/in/k3yjey-dev/)
+[LinkedIn](https://www.linkedin.com/in/kevinmadrid-dev/)

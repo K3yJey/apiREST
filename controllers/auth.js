@@ -4,9 +4,7 @@ const { userModel } = require("../models")
 const { tokenSign, verifySign } = require("../utils/handleJWT")
 const { handleHttpError } = require("../utils/handleError")
 
-/**
- * Registrar
- */
+// Registrar
 const registerAuth = async (req, res) => {
   try {
     req = matchedData(req)
@@ -27,9 +25,7 @@ const registerAuth = async (req, res) => {
   }
 }
 
-/**
- * Ingresar
- */
+// Ingresar
 const loginAuth = async (req, res) => {
   req = matchedData(req)
   const user = await userModel.module

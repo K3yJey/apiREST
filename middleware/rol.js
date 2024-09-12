@@ -5,7 +5,9 @@ const checkRol = (role) => (req, res, next) => {
     const { user } = req
     const roleByUser = user.role
     //Si roleByUser existe dentro de roleSingle devuelve un TRU en rol.some
-    const checkValueRole = role.some((roleSingle) => roleByUser.includes(roleSingle))
+    const checkValueRole = role.some((roleSingle) =>
+      roleByUser.includes(roleSingle)
+    )
 
     if (!checkValueRole) {
       handleHttpError(res, "El usuario no tiene permisos")

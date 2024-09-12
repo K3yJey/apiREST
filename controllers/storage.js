@@ -6,9 +6,7 @@ const { handleHttpError } = require("../utils/handleError")
 const PUBLIC_URL = process.env.PUBLIC_URL
 const MEDIA_PATH = `${__dirname}/../storage`
 
-/**
- * Crear un registro
- */
+// Crear un registro
 const createItem = async (req, res) => {
   try {
     const { body, file } = req
@@ -24,9 +22,8 @@ const createItem = async (req, res) => {
   }
 }
 
-/**
- * Listar registros
- */
+// Listar registros
+
 const getItems = async (req, res) => {
   try {
     const data = await storageModel.module.find({})
@@ -37,9 +34,7 @@ const getItems = async (req, res) => {
   }
 }
 
-/**
- * Listar un registro
- */
+// Listar un registro
 const getItem = async (req, res) => {
   try {
     const { id } = matchedData(req)
@@ -51,9 +46,7 @@ const getItem = async (req, res) => {
   }
 }
 
-/**
- * Eliminar un registro
- */
+// Eliminar un registro
 const deleteItem = async (req, res) => {
   try {
     const { id } = matchedData(req)
